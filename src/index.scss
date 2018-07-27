@@ -1,0 +1,89 @@
+@import './static/rules';
+
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  outline: none;
+  background: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+html {
+  overflow-x: hidden;
+  height: 100%;
+}
+
+html,
+body {
+  position: relative;
+  width: 100%;
+  min-height: 100%;
+  background: $White;
+  color: $Black;
+  font-family: Arial, sans-serif;
+  font-size: 12px;
+  letter-spacing: .025em;
+  -webkit-text-size-adjust: 100%;
+
+  @media screen and (min-width: $ViewMD) {
+    font-size: 14px;
+  }
+}
+
+ul,
+li {
+  position: relative;
+  display: block;
+}
+
+a,
+a:visited {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+p,
+blockquote {
+  position: relative;
+  margin-bottom:25px;
+  font-size: 1em;
+  letter-spacing:.01em;
+  line-height:1.5;
+  
+  a,
+  a:visited {
+    transition: all 0.2s linear;
+    font-size: bold;
+
+    &:hover {
+      color: inherit;
+      text-decoration: underline;
+    }
+  }
+}
+
+.clearfix {
+  @include clearfix;
+}
+
+.container {
+  margin: auto;
+  width: $ContainerWidth;
+}
+
+.forced-center {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: inline-block;
+  width: 100%;
+}
+
+@import './static/responsive';
+@import './static/grids';

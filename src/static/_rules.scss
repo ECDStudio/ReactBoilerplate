@@ -1,0 +1,54 @@
+$ViewSM: 451px;
+$ViewMD: 769px;
+$ViewLG: 1021px;
+$ViewXL: 1261px;
+$ViewHD: 1601px;
+
+$Black: #000;
+$White: #fff;
+$LightGrey: #e4e4e4;
+
+$ContainerWidth: 90%;
+$NavHeight: 155px;
+$Spacing: 25px;
+
+@mixin clearfix {
+  &::after {
+    display: table;
+    clear: both;
+    content: '';
+  }
+}
+
+@mixin pseudo {
+  position: absolute;
+  display: block;
+  content: ' ';
+}
+
+@mixin animation($name, $duration, $curve, $delay, $count, $direct) {
+  @include prefixed(animation-name, $name);
+  @include prefixed(animation-duration, $duration);
+  @include prefixed(animation-timing-function, $curve);
+  @include prefixed(animation-delay, $delay);
+  @include prefixed(animation-iteration-count, $count);
+  @include prefixed(animation-direction, $direct);
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+      @content;
+  }
+  @-moz-keyframes #{$name} {
+      @content;
+  }
+  @-o-keyframes #{$name} {
+      @content;
+  }
+  @-ms-keyframes  #{$name} {
+      @content;
+  }
+  @keyframes #{$name} {
+      @content;
+  }
+}
