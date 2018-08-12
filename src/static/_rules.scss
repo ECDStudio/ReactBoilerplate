@@ -26,13 +26,14 @@ $Spacing: 25px;
   content: ' ';
 }
 
-@mixin animation($name, $duration, $curve, $delay, $count, $direct) {
+@mixin animation($name, $duration, $curve, $delay, $count, $direct, $fill-mode) {
   @include prefixed(animation-name, $name);
   @include prefixed(animation-duration, $duration);
   @include prefixed(animation-timing-function, $curve);
   @include prefixed(animation-delay, $delay);
   @include prefixed(animation-iteration-count, $count);
   @include prefixed(animation-direction, $direct);
+  @include prefixed(animation-fill-mode, $fill-mode);
 }
 
 @mixin keyframes($name) {
