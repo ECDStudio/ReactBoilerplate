@@ -1,4 +1,5 @@
 @import './static/rules';
+@import './static/grids';
 
 * {
   border: 0;
@@ -10,26 +11,29 @@
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
-}
+  box-sizing: border-box;
 
-html {
-  overflow-x: hidden;
-  height: 100%;
+  -webkit-tap-highlight-color:  rgba($white, 0);
+  -webkit-overflow-scrolling: touch;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 html,
 body {
   position: relative;
   width: 100%;
-  min-height: 100%;
-  background: $White;
-  color: $Black;
-  font-family: Arial, sans-serif;
+  height: 100%;
+  background: $white;
+  color: $darkgrey;
+  font-family: sans-serif;
   font-size: 12px;
-  letter-spacing: .025em;
+  letter-spacing: .015em;
+  line-height: 1;
+  overflow: hidden;
   -webkit-text-size-adjust: 100%;
 
-  @media screen and (min-width: $ViewMD) {
+  @include VIEW_MD {
     font-size: 14px;
   }
 }
@@ -47,8 +51,7 @@ a:visited {
   cursor: pointer;
 }
 
-p,
-blockquote {
+p {
   position: relative;
   margin-bottom:25px;
   font-size: 1em;
@@ -67,23 +70,4 @@ blockquote {
   }
 }
 
-.clearfix {
-  @include clearfix;
-}
-
-.container {
-  margin: auto;
-  width: $ContainerWidth;
-}
-
-.forced-center {
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  display: inline-block;
-  width: 100%;
-}
-
-@import './static/responsive';
-@import './static/grids';
+.container { @include container }

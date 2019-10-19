@@ -1,24 +1,28 @@
-$ViewSM: 451px;
-$ViewMD: 769px;
-$ViewLG: 1021px;
-$ViewXL: 1261px;
-$ViewHD: 1601px;
+$VIEW_SM: 451px;
+$VIEW_MD: 769px;
+$VIEW_LG: 1021px;
+$VIEW_XL: 1261px;
+$VIEW_HD: 1601px;
 
-$Black: #000;
-$White: #fff;
-$LightGrey: #e4e4e4;
+@mixin VIEW_SM { @media screen and (min-width: $VIEW_SM) { @content } }
+@mixin VIEW_MD { @media screen and (min-width: $VIEW_MD) { @content } }
+@mixin VIEW_LG { @media screen and (min-width: $VIEW_LG) { @content } }
+@mixin VIEW_XL { @media screen and (min-width: $VIEW_XL) { @content } }
+@mixin VIEW_HD { @media screen and (min-width: $VIEW_HD) { @content } }
 
-$ContainerWidth: 90%;
-$NavHeight: 155px;
-$Spacing: 25px;
+$black: #000;
+$white: #fff;
+$lightgrey: #dcdcdc;
+$grey: #b5b5b5;
+$darkgrey: #3e3e3e;
 
-@mixin clearfix {
-  &::after {
-    display: table;
-    clear: both;
-    content: '';
-  }
-}
+$container-width: 80%;
+$container-offset: (100% - $container-width) / 2;
+$container-max-width: $VIEW_XL;
+$container-break-point: #{$container-max-width / $container-width * 100%};
+$container-broken-offset: calc(50% - #{$container-max-width / 2});
+
+$spacing: 25px;
 
 @mixin pseudo {
   position: absolute;
@@ -26,30 +30,17 @@ $Spacing: 25px;
   content: ' ';
 }
 
-@mixin animation($name, $duration, $curve, $delay, $count, $direct, $fill-mode) {
-  animation-name: $name;
-  animation-duration: $duration;
-  animation-timing-function: $curve;
-  animation-delay: $delay;
-  animation-iteration-count: $count;
-  animation-direction: $direct;
-  animation-fill-mode: $fill-mode;
+@mixin container {
+  margin-left: auto;
+  margin-right: auto;
+  width: $container-width;
+  max-width: $container-max-width;
 }
 
-@mixin keyframes($name) {
-  @-webkit-keyframes #{$name} {
-      @content;
-  }
-  @-moz-keyframes #{$name} {
-      @content;
-  }
-  @-o-keyframes #{$name} {
-      @content;
-  }
-  @-ms-keyframes  #{$name} {
-      @content;
-  }
-  @keyframes #{$name} {
-      @content;
-  }
+@mixin forced_center($position: absolute) {
+  position: $position;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: inline-block;
 }

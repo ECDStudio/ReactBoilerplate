@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
 import classNames from 'classnames';
 
-import './Home.scss';
+import './${COMPONENT}.scss';
 
-class Home extends Component {
-
+class ${COMPONENT} extends Component {
   constructor(props) {
       super(props);
 
@@ -15,15 +14,14 @@ class Home extends Component {
 
   render = () => {
     const classes = classNames({
-      'Home': true,
+      '${COMPONENT}': true
     })
-
+  
     return (
-      <section className={ classes } ref={el => this.$node = el}>
-        
-      </section>
-    );
+      <div className={ classes } ref={ el => this.$node = el }>
+      </div>
+    )
   }
 }
 
-export default Home;
+export default ${COMPONENT};

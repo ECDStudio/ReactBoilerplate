@@ -3,12 +3,16 @@
   display: flex;
   flex-wrap: wrap;
   margin: 0 -10px;
+
+
+  &.reversed {
+    flex-direction: row-reverse;
+  }
 }
 
 .col {
   width: 100%;
   padding: 0 10px 20px;
-  box-sizing: border-box;
   margin: 0;
 }
 
@@ -61,28 +65,32 @@
     &.#{$size}-5-6 {
       width: 83.33333%;
     }
+
+    &.#{$size}-1-8 {
+      width: 12.5%;
+    }
   }
 }
 
 @include create-grid(xs);
 
-@media screen and (min-width: $ViewSM) {
+@media screen and (min-width: $VIEW_SM) {
   @include create-grid(sm);
 }
 
-@media screen and (min-width: $ViewMD) {
+@media screen and (min-width: $VIEW_MD) {
   @include create-grid(md);
 }
 
-@media screen and (min-width: $ViewLG) {
+@media screen and (min-width: $VIEW_LG) {
   @include create-grid(lg);
 }
 
-@media screen and (min-width: $ViewXL) {
+@media screen and (min-width: $VIEW_XL) {
   @include create-grid(xl);
 }
 
-@media screen and (min-width: $ViewHD) {
+@media screen and (min-width: $VIEW_HD) {
   @include create-grid(hd);
 }
 
@@ -96,7 +104,7 @@
         > .col {
           padding-left: ($i + px);
           padding-right: ($i + px);
-/*          padding-bottom: ($i * 2 + px);*/
+          /*          padding-bottom: ($i * 2 + px);*/
         }
       }
     }
