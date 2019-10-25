@@ -1,0 +1,55 @@
+@mixin media-sm { @media screen and (min-width: view(sm)) { @content } }
+@mixin media-md { @media screen and (min-width: view(md)) { @content } }
+@mixin media-lg { @media screen and (min-width: view(lg)) { @content } }
+@mixin media-xl { @media screen and (min-width: view(xl)) { @content } }
+@mixin media-hd { @media screen and (min-width: view(hd)) { @content } }
+
+@mixin media-sm-less { @media screen and (max-width: view(sm) - 1px) { @content } }
+@mixin media-md-less { @media screen and (max-width: view(md) - 1px) { @content } }
+@mixin media-lg-less { @media screen and (max-width: view(lg) - 1px) { @content } }
+@mixin media-xl-less { @media screen and (max-width: view(xl) - 1px) { @content } }
+@mixin media-hd-less { @media screen and (max-width: view(hd) - 1px) { @content } }
+
+@mixin media-custom($view) {
+  @media screen and (min-width: $view) { @content }
+}
+@mixin media-custom-less($view) {
+  @media screen and (min-width: $view) { @content }
+}
+@mixin media-between($min, $max) {
+  @media screen and (min-width: $min) and (max-width: $max) { @content }
+}
+
+@mixin container($width: $container-width, $max-width: $container-max-width) {
+  margin-left: auto;
+  margin-right: auto;
+  width: $width;
+  max-width: $max-width;
+}
+
+@mixin row($space: $spacing / 2) {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0 -$space;
+
+  > * {
+    width: 100%;
+    padding: 0 $space ($space * 2);
+    margin: 0;
+  }
+}
+
+@mixin forced-center($position: absolute) {
+  position: $position;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  display: inline-block;
+}
+
+@mixin pseudo {
+  position: absolute;
+  display: block;
+  content: ' ';
+}

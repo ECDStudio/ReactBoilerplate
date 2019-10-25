@@ -1,0 +1,31 @@
+$view: (
+  sm: 451px,
+  md: 769px,
+  lg: 1021px,
+  xl: 1261px,
+  hd: 1601px,
+);
+
+@function view($key) {
+  @return map-get($view, $key);
+}
+
+$color: (
+  black: #000,
+  white: #fff,
+  lightgrey: #dcdcdc,
+  grey: #b5b5b5,
+  darkgrey: #3e3e3e,
+);
+
+@function color($key, $alpha: 1) {
+  @return rgba(map-get($color, $key), $alpha);
+}
+
+$container-width: 80%;
+$container-offset: (100% - $container-width) / 2;
+$container-max-width: view(xl);
+$container-break-point: #{$container-max-width / $container-width * 100%};
+$container-broken-offset: calc(50% - #{$container-max-width / 2});
+
+$spacing: 25px;
