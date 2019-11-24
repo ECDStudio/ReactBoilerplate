@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 import App from './App';
 
-import { updateViewport } from 'src/redux/actions';
+import { updateViewport } from 'redux/actions';
 
 const mapStateToProps = state => ({
   

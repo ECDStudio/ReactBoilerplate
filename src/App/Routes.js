@@ -1,5 +1,5 @@
 // Sections.
-import Home from 'src/sections/Home';
+import Home from 'sections/Home';
 
 export const Routes = [
   {
