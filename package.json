@@ -19,8 +19,8 @@
     "component": "bash ./scripts/component.sh $NAME",
     "section": "bash ./scripts/section.sh $NAME",
     "element": "bash ./scripts/element.sh $NAME $PARENT",
-    "start": "NODE_PATH=./ react-scripts start",
-    "build": "NODE_PATH=./ react-scripts build",
+    "start": "react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
