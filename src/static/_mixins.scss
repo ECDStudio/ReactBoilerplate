@@ -14,7 +14,7 @@
   @media screen and (min-width: $view) { @content }
 }
 @mixin media-custom-less($view) {
-  @media screen and (min-width: $view) { @content }
+  @media screen and (max-width: $view - 1px) { @content }
 }
 @mixin media-between($min, $max) {
   @media screen and (min-width: $min) and (max-width: $max) { @content }
