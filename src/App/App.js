@@ -25,6 +25,14 @@ class App extends Component {
     window.addEventListener( 'resize', this.handleResize );
   }
 
+  componentWillUnmount = () => {
+    window.removeEventListener( 'resize', this.handleResize );
+  }
+
+  handleResize = () => {
+    this.props.updateViewport(window.innerWidth, window.innerHeight);
+  }
+
   render = () => {
     const classes = classNames({
       'App': true,
